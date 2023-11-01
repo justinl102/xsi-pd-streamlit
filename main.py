@@ -21,7 +21,6 @@ def load_dataset(path):
     return pd.read_pickle("growth_df.pkl")
 
 df = load_dataset("growth_df.pkl")
-df.columns
 df['monitoring_date'] = pd.to_datetime(df['monitoring_date'])
 #df['harvest_date'] = pd.to_datetime(df['harvest_date'])
 #df['stockedAt'] = pd.to_datetime(df['stockedAt'])
