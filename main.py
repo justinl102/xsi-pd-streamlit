@@ -292,11 +292,15 @@ def generate_trace_cyles(current_cycle_df,fig,  x_variable, y_variable1, y_varia
             secondary_y=True,
         )
     return fig
+header_text = 'Seleccione dos variables para un estanque activo y vea cómo se comparan \nlos resultados con el rendimiento promedio de su granja.'
+st.text(header_text
+)
 y_variable1_label = labels_dict[y_variable1]
 y_variable2_label = labels_dict[y_variable2]
 fig = make_subplots(specs=[[{"secondary_y": True}]])
 fig = generate_trace_benchmarks(fig, plot_df, x_variable, y_variable1, y_variable2)
 fig = generate_trace_cyles(current_cycle_df,fig,  x_variable, y_variable1, y_variable2)
+
 fig.update_xaxes(title_text="Días del ciclo")
 fig.update_yaxes(title_text=y_variable1_label, secondary_y=False)
 fig.update_yaxes(title_text=y_variable2_label, secondary_y=True)
@@ -315,8 +319,13 @@ for variable in list(labels_dict.keys()):
    col_str = variable + "_pct_diff"
    current_cycle_df[col_str] = xx
 
+header_text = "Vea todas sus variables y cómo progresan con el tiempo en comparación con \nel rendimiento típico de su granja. 0% representa el promedio de su finca."
+st.text(header_text
+)
+
 y_variable_test = list(labels_dict.keys())[0] + "_pct_diff"
 fig = make_subplots(specs=[[{"secondary_y": False}]])
+
 colors = ["red",'blue','orange','green']
 for j,variable in enumerate(['mlResultWeightCv_pct_diff', 'mlResultAverageWeight_pct_diff','growth_rate_since_stocking_pct_diff','weekly_growth_rate_two_weeks_pct_diff']):
     plot_df = current_cycle_df.dropna(subset = [variable])
@@ -343,7 +352,9 @@ st.plotly_chart(fig, use_container_width=True)
 
 #####
 #####
-
+header_text = 'Ver la distribución actual del estanque.'
+st.text(header_text
+)
 current_distribution = current_cycle_df['weightDistribution'].iloc[-1]
 print(type(current_distribution))
 if current_distribution:
@@ -361,7 +372,9 @@ if current_distribution:
 else: 
    'Histograma no disponible'
    
-
+header_text = 'Vea los datos utilizados para calcular el punto de referencia.La línea roja es \nla mejor aproximación del promedio según los datos de su granja en la plataforma.'
+st.text(header_text
+)
 
 fig = make_subplots(specs=[[{"secondary_y": False}]])
 
