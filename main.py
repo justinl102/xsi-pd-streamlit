@@ -320,6 +320,7 @@ fig = make_subplots(specs=[[{"secondary_y": False}]])
 colors = ["red",'blue','orange','green']
 for j,variable in enumerate(['mlResultWeightCv_pct_diff', 'mlResultAverageWeight_pct_diff','growth_rate_since_stocking_pct_diff','weekly_growth_rate_two_weeks_pct_diff']):
     plot_df = current_cycle_df.dropna(subset = [variable])
+    plot_df = plot_df[plot_df['cycle_days']>10]
     fig.add_trace(
                     go.Scatter(
                         x=plot_df[x_variable],
