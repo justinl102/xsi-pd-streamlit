@@ -21,13 +21,14 @@ def load_dataset(path):
     return pd.read_pickle("growth_df.pkl")
 
 df = load_dataset("growth_df.pkl")
-df['monitoring_date'] = pd.to_datetime(df['monitoring_date'])
-df['harvest_date'] = pd.to_datetime(df['harvest_date'])
-df['stockedAt'] = pd.to_datetime(df['stockedAt'])
-df['cycle_days'] = (df['monitoring_date'] - df['stockedAt']).dt.days
-df['mlResultWeightCv'] = round(df['mlResultWeightCv'],2)
+#df['monitoring_date'] = pd.to_datetime(df['monitoring_date'])
+#df['harvest_date'] = pd.to_datetime(df['harvest_date'])
+#df['stockedAt'] = pd.to_datetime(df['stockedAt'])
+
 df_2023 = df[df['monitoring_date'] >= '2023-01-01']
 
+df_2023['cycle_days'] = (df_2023['monitoring_date'] - df_2023['stockedAt']).dt.days
+df_2023['mlResultWeightCv'] = round(df_2023['mlResultWeightCv'],3)
 sidebar_farm = st.sidebar.selectbox("Finca",
     #list(labels_reverse_dict.keys()),
     ['Pesquera e Industrial bravito','Velomar Cia Ltda', 'Oro del Rio', 'Grupo Litoral - Cumar','Lanconor', 'White Panther Produktion'], 
