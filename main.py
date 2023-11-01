@@ -31,7 +31,7 @@ df_2023['cycle_days'] = df_2023['days_since_stocking']
 df_2023['mlResultWeightCv'] = round(df_2023['mlResultWeightCv'],3)
 sidebar_farm = st.sidebar.selectbox("Finca",
     #list(labels_reverse_dict.keys()),
-    ['Pesquera e Industrial bravito','Velomar Cia Ltda', 'Oro del Rio', 'Grupo Litoral - Cumar','Lanconor', 'White Panther Produktion'], 
+    ['Pesquera e Industrial bravito','Velomar Cia Ltda', 'Oro Del Pacifico', 'Lanconor', 'White Panther Produktion'], 
     placeholder="Finca",
     )
 
