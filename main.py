@@ -84,8 +84,8 @@ labels_dict = {
   #  '2week_growth_rate':'xx',
    # 'growth_since_stocking':'Peso Promedio',
    # 'growth_rate_since_stocking':'Peso Promedio',
-    'weekly_growth_rate_two_weeks':'2 Week Avg Growth Rate',
-    'growth_rate_since_stocking' :'Cumulative Growth Rate'
+    'weekly_growth_rate_two_weeks':'Tasa de crec. - 2 sem.',
+    'growth_rate_since_stocking' :'Crec. total siembra'
 }
 labels_dict_diff = {
    'mlResultAverageWeight_pct_diff':'Peso Promedio',
@@ -93,8 +93,8 @@ labels_dict_diff = {
   #  '2week_growth_rate':'xx',
    # 'growth_since_stocking':'Peso Promedio',
    # 'growth_rate_since_stocking':'Peso Promedio',
-    'weekly_growth_rate_two_weeks_pct_diff':'2 Week Average Growth Rate',
-    'growth_rate_since_stocking_pct_diff' :'Cumulative Growth Rate'
+    'weekly_growth_rate_two_weeks_pct_diff':'Tasa de crec. - 2 sem.',
+    'growth_rate_since_stocking_pct_diff' :'Crec. total siembra'
    
 }
 reverse_labels = dict((v,k) for k,v in labels_dict.items())
@@ -246,7 +246,7 @@ def generate_trace_benchmarks(fig, plot_df, x_variable, y_variable1, y_variable2
         go.Scatter( x=plot_df[x_variable], 
                     y=plot_df[y_variable1], 
                     line=dict(color=color_1),
-                    name = sidebar_var1,
+                    name = "Histórico " + sidebar_var1,
                         ),
                 
                 secondary_y=False,
@@ -256,7 +256,7 @@ def generate_trace_benchmarks(fig, plot_df, x_variable, y_variable1, y_variable2
         go.Scatter(x=plot_df[x_variable], 
                    y=plot_df[y_variable2], 
                    line=dict(color=color_2),
-                   name = sidebar_var2,
+                   name = "Histórico " + sidebar_var2,
                    
                         ),
                 
@@ -346,7 +346,7 @@ fig.update_layout(
   )
 )
 fig.update_xaxes(title_text="Días del ciclo")
-fig.update_yaxes(title_text="Diferencia porcentual referencia", secondary_y=False)
+fig.update_yaxes(title_text="Diferencia Porcentual Histórico", secondary_y=False)
 fig.add_hline(y=0, line_width=3,  line_color="black")
 st.plotly_chart(fig, use_container_width=True)
 
