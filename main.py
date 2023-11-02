@@ -245,7 +245,7 @@ def generate_trace_benchmarks(fig, plot_df, x_variable, y_variable1, y_variable2
     fig.add_trace(
         go.Scatter( x=plot_df[x_variable], 
                     y=plot_df[y_variable1], 
-                    line=dict(color=color_1),
+                    line=dict(color=color_1,dash="dash"),
                     name = "Histórico " + sidebar_var1,
                         ),
                 
@@ -255,7 +255,7 @@ def generate_trace_benchmarks(fig, plot_df, x_variable, y_variable1, y_variable2
     fig.add_trace(
         go.Scatter(x=plot_df[x_variable], 
                    y=plot_df[y_variable2], 
-                   line=dict(color=color_2),
+                   line=dict(color=color_2,dash="dash"),
                    name = "Histórico " + sidebar_var2,
                    
                         ),
