@@ -85,7 +85,7 @@ labels_dict = {
    # 'growth_since_stocking':'Peso Promedio',
    # 'growth_rate_since_stocking':'Peso Promedio',
     'weekly_growth_rate_two_weeks':'Tasa de crec. - 2 sem.',
-    'growth_rate_since_stocking' :'Crec. total siembra'
+    'growth_rate_since_stocking' :'Crec. total desde la siembra'
 }
 labels_dict_diff = {
    'mlResultAverageWeight_pct_diff':'Peso Promedio',
@@ -94,7 +94,7 @@ labels_dict_diff = {
    # 'growth_since_stocking':'Peso Promedio',
    # 'growth_rate_since_stocking':'Peso Promedio',
     'weekly_growth_rate_two_weeks_pct_diff':'Tasa de crec. - 2 sem.',
-    'growth_rate_since_stocking_pct_diff' :'Crec. total siembra'
+    'growth_rate_since_stocking_pct_diff' :'Crec. total desde la siembra'
    
 }
 reverse_labels = dict((v,k) for k,v in labels_dict.items())
