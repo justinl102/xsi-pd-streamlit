@@ -195,7 +195,7 @@ sidebar_var2 = st.sidebar.selectbox(
     )
 
 sidebar_pond = st.sidebar.selectbox(
-    "Piscina",
+    "Piscina - Ciclo Activo",
     #list(labels_reverse_dict.keys()),
     active_df['pondName'], 
     placeholder="Select Pond",
